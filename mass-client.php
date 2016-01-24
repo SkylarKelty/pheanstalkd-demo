@@ -18,4 +18,6 @@ array_shift($argv);
 $args = implode(' ', $argv);
 
 // Send the command line args to pheanstalk.
-$pheanstalk->put($args);
+for ($i = 0; $i < 1000; $i++) {
+	$pheanstalk->put($args);
+}
